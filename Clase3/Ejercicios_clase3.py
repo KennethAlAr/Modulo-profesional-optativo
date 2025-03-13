@@ -1,5 +1,8 @@
 # 📌 EJERCICIOS CLASE 3
 
+import random
+import math
+
 # 1️⃣ Generador de nombres de usuario
 #     Pide al usuario su nombre y apellido.
 #     Genera un nombre de usuario en minúsculas, sin espacios.
@@ -7,7 +10,13 @@
 #     Muestra el nombre de usuario generado.
 
 print("📌 EJERCICIO 1\n")
-
+nombre_apellido = input("Escribe tu nombre y tu primer apellido:")
+lista_strings = nombre_apellido.split(" ")
+nombre = lista_strings[0].lower()
+apellido = lista_strings[1].lower()
+numero_random = str(random.randint(1,100))
+usuario = nombre + apellido + numero_random
+print(f"Tu nombre de usuario es: {usuario}")
 print()
 
 # 2️⃣ Analizador de frases
@@ -18,6 +27,15 @@ print()
 #     Muestra la frase invertida.
 
 print("📌 EJERCICIO 2\n")
+input_frase = input("Escribe la frase que quieras:")
+print(f"Tu frase consta de {len(input_frase)} carácteres.")
+if "Python" in input_frase:
+    print("¡Tu frase contiene la palabra Python!")
+else:
+    print("Tu frase no contiene la palabra Python...")
+frase_mayusculas = input_frase.upper()
+frase_invertida = frase_mayusculas[::-1]
+print(frase_invertida)
 
 print()
 
@@ -28,7 +46,10 @@ print()
 #     Muestra el precio redondeado hacia arriba.
 
 print("📌 EJERCICIO 3\n")
-
+input_precio = input("¿Qué precio tiene tu producto?")
+precio_descuento = float(input_precio) * 0.85
+print("El precio de tu producto con el 15% de descuento aplicado es de: {:.2f}".format(precio_descuento))
+print(f"Si me das {math.ceil(precio_descuento)}€ te doy el cambio.")
 print()
 
 # 4️⃣ Generador de etiquetas de productos
@@ -38,7 +59,14 @@ print()
 #     Genera un código basado en el valor ASCII de la primera letra del producto.
 
 print("📌 EJERCICIO 4\n")
-
+input_producto = input("¿Cuál es tu producto?")
+input_precio_producto = float(input("¿Cuál es su precio?"))
+nombre_producto = input_producto.upper()
+precio_producto = round(input_precio_producto, 2)
+codigo_producto = ord(nombre_producto[0])
+print(f"Tu producto es: {nombre_producto}")
+print(f"El precio de tu producto es: {precio_producto}€")
+print(f"El código encriptado de tu producto es: {codigo_producto}")
 print()
 
 # 5️⃣ Conversión de tipos y manipulación de listas
@@ -48,7 +76,11 @@ print()
 #     Muestra la lista ordenada sin duplicados.
 
 print("📌 EJERCICIO 5\n")
-
+input_lista = input("Escribe una lista de números separados por coma:")
+lista = input_lista.split(",")
+lista_numeros = list(map(int, lista))
+lista_sin_duplicados = set(lista_numeros)
+print (sorted(lista_sin_duplicados))
 print()
 
 # 6️⃣ Creación de mensajes personalizados
@@ -57,7 +89,15 @@ print()
 #     Si la edad es menor de 18, redondea hacia arriba hasta la mayoría de edad.
 
 print("📌 EJERCICIO 6\n")
-
+import math
+nombre_usuario = input("¿Cuál es tu nombre?")
+edad_usuario = int(input("¿Cuál es tu edad?"))
+ciudad_usuario = input("¿Cuál es tu ciudad?")
+#if edad_usuario < 18:
+#    edad_usuario = 18
+#Visto en la solución de Mario:
+edad_redondeada = math.ceil(edad_usuario/18)*18
+print(f"Tu nombre es {nombre_usuario}, tienes {edad_usuario} años y vives en {ciudad_usuario}. Edad mínima adulta: {edad_redondeada} años.")
 print()
 
 # 7️⃣ Generador de contraseñas aleatorias
