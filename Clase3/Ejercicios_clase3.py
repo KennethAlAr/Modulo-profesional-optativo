@@ -106,7 +106,12 @@ print()
 #     Muestra la contraseña generada.
 
 print("📌 EJERCICIO 7\n")
-
+nombre = input ("¿Cuál es tu nombre?")
+inicial = nombre[0].upper()
+numero = random.randint(10000000,99999999)
+simbolo = "/"
+contraseña = inicial + str(numero) + simbolo
+print(contraseña)
 print()
 
 # 8️⃣ Verificación de nombres en listas
@@ -115,7 +120,26 @@ print()
 #     Si está en la lista, muestra su posición.
 
 print("📌 EJERCICIO 8\n")
-
+lista_nombre = [
+    "Kenneth",
+    "Paula",
+    "Sara",
+    "Sofía",
+    "Mateo",
+    "Valeria",
+    "Lucas",
+    "Martina",
+    "Diego",
+    "Camila",
+    "Andrés",
+    "Isablea",
+    "Tomás"
+]
+invitado = input("¿Cuál es tu nombre?")
+if invitado in lista_nombre:
+    print(f"Hola {invitado}. Tu posición en la lista es la número {lista_nombre.index(nombre)+1}.")
+else:
+    print("Tu nombre no se encuentra en la lista.")
 print()
 
 # 9️⃣ Manipulación de nombres
@@ -125,7 +149,12 @@ print()
 #     Muestra el alias generado.
 
 print("📌 EJERCICIO 9\n")
-
+name_surname = input("Por favor, introduce tu nombre y tu apellido:")
+name = name_surname.split(" ")[0]
+surname = name_surname.split(" ")[1]
+print(f"Tu nombre en minúsculas es {name.lower()} y tu apellido en mayúsculas es {surname.upper()}")
+alias = (name[:3] + surname[:3]).capitalize()
+print(f"Tu alias es {alias}.")
 print()
 
 # 🔟 Formatear y mostrar datos matemáticos
@@ -135,5 +164,8 @@ print()
 #     Calcula y muestra su raíz cuadrada.
 
 print("📌 EJERCICIO 10\n")
-
+numero_decimal = input("Por favor, introduce un número decimal:")
+print(f"Tú numero decimal redondeado a dos decimales es {round(float(numero_decimal) , 2)}.")
+print(f"El cuadrado de tu número es {float(numero_decimal)**2.0}.")
+print(f"La raíz cuadrada de tu número es {float(numero_decimal)**0.5}.")
 print()
