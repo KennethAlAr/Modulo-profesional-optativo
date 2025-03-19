@@ -5,7 +5,11 @@ operaciones matemáticas (potenciación, división entera, módulo).
 Imprime los resultados formateados en una cadena clara y descriptiva.
 '''
 
-
+num1, num2, num3, num4, num5 = 10, 3, 2.5, 7.2, 4+2j
+resultado = (f"Potencia: {num1 ** num2}, División entera: {num1//num2}, "
+             f"Módulo: {num1 % num2}, Multiplicaicón: {num3 * num4}, Complejo: {num5}")
+print(resultado)
+print()
 
 '''
 Ejercicio 2: Combinación de cadenas y números
@@ -14,7 +18,11 @@ Genera una nueva cadena combinando texto con el resultado de operaciones aritmé
 entre estas variables. Usa conversión explícita (str()) para insertar valores numéricos en la cadena final.
 '''
 
-
+num_int, num_float = 8, 3.5
+cadena1, cadena2, cadena3 = "Resultado: ", "La suma es ", " y la división es "
+resultado_ej2 = cadena1 + cadena2 + str(num_int + num_float) + cadena3 + str(num_int/num_float)
+print(resultado_ej2)
+print()
 
 '''
 Ejercicio 3: Manipulación avanzada de cadenas
@@ -23,7 +31,10 @@ Realiza varias operaciones encadenadas como eliminar espacios extremos,
 convertir todo a mayúsculas, y dividir la cadena en varias subcadenas usando un separador específico.
 '''
 
-
+cadena = "  Esto es una cadena para manipular  "
+nueva_cadena = cadena.strip().upper().split(" ")
+print(nueva_cadena)
+print()
 
 '''
 Ejercicio 4: Índices y subcadenas
@@ -35,8 +46,9 @@ Imprime la nueva cadena resultante.
 
 cadena_extensa = "Python es un super lenguaje que me re encanta"
 subcadena = cadena_extensa[0:6] + "" + cadena_extensa[11:20]
-resultado = subcadena[::-1]
-print(resultado)
+resultado_subcadenas = subcadena[::-1]
+print(resultado_subcadenas)
+print()
 
 '''
 Ejercicio 5: Formato y conversión numérica
@@ -52,6 +64,7 @@ formato = (f"Entero: {entero},"
            f"Notación científica: {flotante:2e},"
            f"Complejo: {complejo}")
 print(formato)
+print()
 
 '''
 Ejercicio 6: Operaciones combinadas entre números y cadenas
@@ -65,6 +78,7 @@ num_a, num_b = 15, 4
 cad_a, cad_b = "La multiplicación da: ", "y el resto: "
 resultado_ej6 = f"{cad_a}{num_a*num_b}, {cad_b}{num_a%num_b}"
 print(resultado_ej6)
+print()
 
 '''
 Ejercicio 7: Cálculo del área y perímetro
@@ -86,6 +100,7 @@ resultados = (f"Área de un rectángulo: {area_rectangulo}, "
               f"perímetro del círculo: {perimetro_circulo}, "
               f"área del triángulo: {area_triangulo}")
 print(resultados)
+print()
 
 '''
 Ejercicio 8: Análisis de texto complejo
@@ -99,10 +114,11 @@ parrafo = "Soy un ejemplo de párrafo largo de narices para ocupar todo el espac
 caracteres = len(parrafo)
 palabroides = len(parrafo.split())
 mayusculas = parrafo.upper()
-resultado= (f"Total de caracteres: {caracteres}, "
+resultado_ej8= (f"Total de caracteres: {caracteres}, "
             f"total de palabras: {palabroides}, "
             f"\nTexto en mayúsculas: {mayusculas}")
-print(resultado)
+print(resultado_ej8)
+print()
 
 '''
 Ejercicio 9: Fórmula cuadrática
@@ -112,7 +128,17 @@ Imprime claramente en una cadena formateada los coeficientes y las raíces encon
 
 '''
 
-
+a, b, c = (
+    float(input("Introduce un primer número: ")),
+    float(input("Introduce un segundo número: ")),
+    float(input("Introduce un último número: "))
+)
+cuadratica_suma= (-b+(b**2 - (4*a*c))**0.5)/(2*a)
+cuadratica_resta= (-b-(b**2 - (4*a*c))**0.5)/(2*a)
+resultado_cuadratica = (f"La ecuación cuadrática que vamos a calcular es: ({a}x²)+({b}x)+({c})"
+             f"\nLos resultados son: {cuadratica_suma} y {cuadratica_resta}.")
+print(resultado_cuadratica)
+print()
 
 '''
 Ejercicio 10: Manejo y transformación de datos personales
@@ -121,3 +147,17 @@ Calcula el índice de masa corporal (IMC) sin usar bucles, y presenta un resumen
 y formateado de todos estos datos personales, incluyendo el IMC con dos decimales.
 
 '''
+
+nombre_input, edad_input, peso_input, altura_input = (
+    input("Introduce tu nombre: "),
+    int(input("¿Cuál es tu edad?")),
+    int(input("¿Cuál es tu peso en Kg?")),
+    int(input("¿Cuál es tu altura en cm?"))
+)
+imc = peso_input / ((altura_input/100)**2)
+resultado_imc = (f"Hola {nombre_input}, "
+             f"tienes {edad_input} años, "
+             f"pesas {peso_input} quilos, "
+             f"mides {altura_input} cm y tu IMC es de {imc:.2f}")
+print(resultado_imc)
+print()
