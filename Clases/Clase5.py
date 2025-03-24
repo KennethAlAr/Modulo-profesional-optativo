@@ -4,6 +4,7 @@ Ejercicio 1️⃣: Evaluación de Expresiones Booleanas
 Crea variables con expresiones matemáticas y convierte los resultados en booleanos.
 Muestra el valor booleano de cada una.
 '''
+from django.template.defaultfilters import length
 
 expresion1 = 10>5
 expresion2 = 7+3==10
@@ -38,7 +39,10 @@ Convierte una cadena numérica en un entero.
 Convierte un booleano en un número.
 '''
 
-
+print(str(8))
+print(int("1236"))
+print(int(True))
+print()
 
 '''
 Ejercicio 4️⃣: Propiedades de las Cadenas
@@ -49,7 +53,12 @@ Muestra la longitud de la cadena.
 Convierte la cadena a mayúsculas y minúsculas.
 '''
 
-
+nombre = "Kenneth"
+print(nombre[0], nombre[-1])
+print(length(nombre))
+print(nombre.upper())
+print(nombre.lower())
+print()
 
 '''
 Ejercicio 5️⃣: Operaciones con Cadenas y Números
@@ -58,7 +67,9 @@ Concatenar cadenas con números usando str().
 Multiplicar una cadena para repetirla varias veces.
 '''
 
-
+print("Barcelona"+str(123)+"camión"+str(456))
+print("Hola" * 5)
+print()
 
 '''
 Ejercicio 6️⃣: Operaciones con Caracteres y Códigos ASCII
@@ -67,7 +78,11 @@ Obtén el código ASCII de la letra 'A'.
 Convierte un número en su carácter ASCII correspondiente.
 '''
 
-
+codigo = ord("A")
+print(codigo)
+codigo_numero = chr(42)
+print(codigo_numero)
+print()
 
 '''
 Ejercicio 7️⃣: Evaluación de Expresiones Lógicas
