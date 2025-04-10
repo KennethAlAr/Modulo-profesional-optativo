@@ -1,9 +1,9 @@
 '''
-Ejercicio 1️⃣: Comparación de números y booleanos
-📌 Objetivo: Usar comparaciones con números y analizar los resultados booleanos.
-Crea tres variables numéricas con valores diferentes.
-Compara los valores entre sí (>, <, >=, <=, ==, !=).
-Almacena los resultados en nuevas variables booleanas y muéstralos.
+# Ejercicio 1️⃣: Comparación de números y booleanos
+# 📌 Objetivo: Usar comparaciones con números y analizar los resultados booleanos.
+# Crea tres variables numéricas con valores diferentes.
+# Compara los valores entre sí (>, <, >=, <=, ==, !=).
+# Almacena los resultados en nuevas variables booleanas y muéstralos.
 '''
 
 numero_a, numero_b, numero_c = 1, 4, 6
