@@ -1,6 +1,4 @@
 import os
-from email.policy import linesep_splitter
-
 
 def search_lines(path, word):
     if len(word) == 0:

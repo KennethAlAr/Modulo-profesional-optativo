@@ -4,3 +4,20 @@
 # Si el acceso falla, debe registrar el intento fallido en el mismo archivo de log.
 # El programa debe definir una función que realice esta tarea.
 
+import datetime
+
+def control_acceso(user, password):
+    if password == "1234":
+        with open("log.txt", "a") as file:
+            log = file.write(f"[ACCESO] Usuario: {user} - {datetime.datetime.now()}\n")
+        print("Acceso concedido")
+    else:
+        with open("log.txt", "a") as file:
+            log = file.write(f"[ERROR] Usuario: {user} - {datetime.datetime.now()}\n")
+        print("Acceso denegado")
+
+
+user = input("Introduce tu nombre de usuario:\n")
+password = input("Introduce la contraseña:\n")
+
+control_acceso(user, password)
