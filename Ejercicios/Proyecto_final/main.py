@@ -16,10 +16,13 @@ def main():
                     # Formatear salida
                     city = input_city()
                     lat, long, country = get_geolocation(city)
-                    max_temp, min_temp = get_forecast(lat, long)
+                    fore_data = get_forecast(lat, long)
                     print(f"Tiempo de la ciudad: {city}, país: {country}")
-                    print(f"Temperatura maxima: {max_temp}")
-                    print(f"Temperatura minima: {min_temp}")
+                    print(f"Temperatura maxima: {fore_data["temp_max"]}")
+                    print(f"Temperatura minima: {fore_data["temp_min"]}")
+                    print(f"Amanece: {fore_data["sunrise"]}")
+                    print(f"Anochece: {fore_data["sunset"]}")
+                    print(f"Porbabilidad de lluvia: {fore_data["prec_prob"]}")
                 case 0:
                     break
                 case _:
