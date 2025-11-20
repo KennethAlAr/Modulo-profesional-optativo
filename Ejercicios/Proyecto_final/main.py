@@ -2,27 +2,26 @@
 
 from cli import *
 from services import *
+from formatter import *
 
 def main():
     while True:
-        try:
+        try: 
             print_menu()
             option = read_menu_option()
             match option:
-                case 1: 
-                    # Primero pedir ciudad
-                    # Llamar API
-                    # Llamar API forecast
-                    # Formatear salida
+                case 1:
                     city = input_city()
                     lat, long, country = get_geolocation(city)
                     fore_data = get_forecast(lat, long)
-                    print(f"Tiempo de la ciudad: {city}, país: {country}")
-                    print(f"Temperatura maxima: {fore_data["temp_max"]}")
-                    print(f"Temperatura minima: {fore_data["temp_min"]}")
-                    print(f"Amanece: {fore_data["sunrise"]}")
-                    print(f"Anochece: {fore_data["sunset"]}")
-                    print(f"Porbabilidad de lluvia: {fore_data["prec_prob"]}")
+                    print_forecast(print_today_weather(fore_data, city, country))
+
+                case 2:
+                    city = input_city()
+                    lat, long, country = get_geolocation(city)
+                    fore_data = get_forecast(lat, long, 3)
+                    print_forecast(print_daily_weather(fore_data, city, country, 3))
+
                 case 0:
                     break
                 case _:
